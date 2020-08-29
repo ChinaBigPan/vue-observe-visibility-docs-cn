@@ -1,100 +1,74 @@
 ---
-title: 模板
+title: 安装
 ---
 
-## 1
+
+# 安装
+
+[英文原地址](https://github.com/Akryum/vue-observe-visibility)
+
+```bash
+npm install --save vue-observe-visibility
+```
+
+[Intersection Observer API]:http://caniuse.com/#feat=intersectionobserver
+[IO polyfill]:https://github.com/w3c/IntersectionObserver/tree/master/polyfill
+
+::: warning 注意
+这个插件使用的[Intersection Observer API][Intersection Observer API]并不是所有浏览器都支持的(目前Edge、Firefox和Chrome都支持)。您需要使用[polyfill][IO polyfill]使它在不兼容的浏览器能够正常工作。
+:::
+
+## 引入
 
 ```js
-.
-├── docs
-│   ├── .vuepress (可选的)
-│   │   ├── components (可选的)
-│   │   ├── theme (可选的)
-│   │   │   └── Layout.vue
-│   │   ├── public (可选的)
-│   │   ├── styles (可选的)
-│   │   │   ├── index.styl
-│   │   │   └── palette.styl
-│   │   ├── templates (可选的, 谨慎配置)
-│   │   │   ├── dev.html
-│   │   │   └── ssr.html
-│   │   ├── config.js (可选的)
-│   │   └── enhanceApp.js (可选的)
-│   │ 
-│   ├── README.md
-│   ├── guide
-│   │   └── README.md
-│   └── config.md
-│ 
-└── package.json
+import Vue from 'vue'
+import VueObserveVisibility from 'vue-observe-visibility'
 
-.
-├── docs
-│   ├── .vuepress (可选的)
-│   │   ├── components (可选的)
-│   │   ├── theme (可选的)
-│   │   │   └── Layout.vue
-│   │   ├── public (可选的)
-│   │   ├── styles (可选的)
-│   │   │   ├── index.styl
-│   │   │   └── palette.styl
-│   │   ├── templates (可选的, 谨慎配置)
-│   │   │   ├── dev.html
-│   │   │   └── ssr.html
-│   │   ├── config.js (可选的)
-│   │   └── enhanceApp.js (可选的)
-│   │ 
-│   ├── README.md
-│   ├── guide
-│   │   └── README.md
-│   └── config.md
-│ 
-└── package.json
+Vue.use(VueObserveVisibility)
 ```
 
-## 2
+或：
 
+```js
+import Vue from 'vue'
+import { ObserveVisibility } from 'vue-observe-visibility'
 
-```html
-.
-├── docs
-│   ├── .vuepress (可选的)
-│   │   ├── components (可选的)
-│   │   ├── theme (可选的)
-│   │   │   └── Layout.vue
-│   │   ├── public (可选的)
-│   │   ├── styles (可选的)
-│   │   │   ├── index.styl
-│   │   │   └── palette.styl
-│   │   ├── templates (可选的, 谨慎配置)
-│   │   │   ├── dev.html
-│   │   │   └── ssr.html
-│   │   ├── config.js (可选的)
-│   │   └── enhanceApp.js (可选的)
-│   │ 
-│   ├── README.md
-│   ├── guide
-│   │   └── README.md
-│   └── config.md
-│ 
-└── package.json
-
-
+Vue.directive('observe-visibility', ObserveVisibility)
 ```
 
-```txt
-home: true
-heroImage: /hero.png
-heroText: Hero 标题
-tagline: Hero 副标题
-actionText: 快速上手 →
-actionLink: /zh/guide/
-features:
-- title: 简洁至上
-  details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-- title: Vue驱动
-  details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
-- title: 高性能
-  details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
-footer: MIT Licensed | Copyright © 2018-present Evan You
+## 浏览器
+
+```js
+<script src="vue.js"></script>
+<script src="https://unpkg.com/vue-observe-visibility/dist/vue-observe-visibility.min.js"></script>
 ```
+
+插件可以自动安装。如果没有，您可以按照下面的说明手动安装它。
+
+加载指令。
+
+```js
+Vue.use(VueObserveVisibility)
+```
+
+使用特定指令：
+
+```js
+Vue.directive('observe-visibility', VueObserveVisibility.ObserveVisibility)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
