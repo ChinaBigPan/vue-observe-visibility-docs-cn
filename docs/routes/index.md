@@ -2,6 +2,7 @@
 title: 安装
 ---
 
+<febeacon />
 
 # 安装
 

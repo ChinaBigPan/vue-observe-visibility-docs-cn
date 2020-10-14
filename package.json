@@ -1,7 +1,7 @@
 {
   "name": "vue-observe-visibility-docs-cn",
   "version": "0.4.6",
-  "description": "",
+  "description": "检测元素在页面上变得可见或隐藏的时机（Vue 指令）",
   "main": "index.js",
   "author": "大笑 <daguogxp@qq.com>",
   "scripts": {
